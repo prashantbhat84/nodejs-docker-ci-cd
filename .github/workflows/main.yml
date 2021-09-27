@@ -25,6 +25,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout Code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: '0'
 
       # Set up Node
       - name: Publish to Docker Hub v8
