@@ -14,7 +14,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo {{steps.login.outcome}}
         continue-on-error: false
       - name: Set up Docker BuildX
         id: buildx
@@ -30,7 +29,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/nodejs-test:${{github.run_number}}
         continue-on-error: false
       - name: Image Digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+        run: echo ${{ steps.login.outcome }}
       
         
         
