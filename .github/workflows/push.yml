@@ -23,7 +23,7 @@ jobs:
           context:  .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/nodejs-test:${{ github.run_number }}
+          tags: latest, ${{ github.run_number }}
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
       
