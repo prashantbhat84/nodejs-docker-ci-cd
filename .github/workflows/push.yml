@@ -13,9 +13,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+        continue-on-error: false
       - name: Set up Docker BuildX
         id: buildx
         uses: docker/setup-buildx-action@v1
+        continue-on-error: false
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2
@@ -23,7 +25,8 @@ jobs:
           context:  .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/nodejs-test:${{github.run_number}} 
+          tags: ${{ secrets.DOCKER_USERNAME }}/nodejs-test:${{github.run_number}}, latest
+        continue-on-error: false
       - name: Image Digest
         run: echo ${{ steps.docker_build.outputs.digest }}
       
