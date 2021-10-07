@@ -36,8 +36,9 @@ jobs:
           key: ${{secrets.AWS_PRIVATE_KEY}}
           host: ${{secrets.AWS_HOST_NAME}}
           username: ${{secrets.AWS_USERNAME}}
-      - name: Print PWD
-        run: echo ${{pwd}}
+        run: |
+          sudo docker run -d -p 80:3000 ${{ secrets.DOCKER_USERNAME }}/nodejs-test:${{github.run_number}}
+    
         
         
     
