@@ -39,13 +39,11 @@ jobs:
           username: ${{secrets.AWS_USERNAME}}
       - name: Execute Docker
         id: execute
-        run: |
-           sudo docker kill $(docker ps -a -q)
-           sudo docker rm  $(docker ps -a -q)
-           sudo docker rmi $(docker images -q)
-           sudo docker run -d -p 80:3000 prashantbhat84/nodejs-test:${{github.run_number}}
-      - name: Execute Docker result
-        run: echo ${{steps.execute.outcome}}
+        run: ls /
+      - name: Add a file
+        run: touch test.txt
+          
+           
     
         
         
