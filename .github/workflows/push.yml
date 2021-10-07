@@ -26,7 +26,7 @@ jobs:
           context:  .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/nodejs-test:${{github.run_number}}
+          tags: ${{ secrets.DOCKER_USERNAME }}/nodejs-test:latest
         continue-on-error: false
       - name: Image Digest
         run: echo ${{ steps.login.outcome }}
