@@ -39,7 +39,7 @@ jobs:
           username: ${{secrets.AWS_USERNAME}}
       - name: Execute Docker
         id: execute
-        run: echo ${{"${PWD##*/}"}}
+        run: echo ${{${PWD##*/}}}
      
            
           
