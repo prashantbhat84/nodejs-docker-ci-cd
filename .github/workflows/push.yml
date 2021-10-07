@@ -37,9 +37,9 @@ jobs:
           key: ${{secrets.AWS_PRIVATE_KEY}}
           host: ${{secrets.AWS_HOST_NAME}}
           username: ${{secrets.AWS_USERNAME}}
-      - name: Execute Docker
-        run: echo ${{steps.awslogin.outcome}}
-          
+      - name: AWS HOME
+        run: echo $HOME
+    
     
         
         
