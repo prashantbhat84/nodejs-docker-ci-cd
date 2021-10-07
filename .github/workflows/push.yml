@@ -41,7 +41,7 @@ jobs:
         id: execute
         run: ls /
       - name: Add a file
-        run: touch test.txt
+        run: touch /home/ubuntu/test.txt
           
            
     
