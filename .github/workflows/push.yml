@@ -39,9 +39,9 @@ jobs:
           username: ${{secrets.AWS_USERNAME}}
       - name: Execute Docker
         id: execute
-        run: ls /
-      - name: Add a file
-        run: touch /home/ubuntu/test.txt
+        run: echo $(basename $PWD)
+     
+           
           
            
     
