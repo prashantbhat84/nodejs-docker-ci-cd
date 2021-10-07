@@ -37,7 +37,7 @@ jobs:
           host: ${{secrets.AWS_HOST_NAME}}
           username: ${{secrets.AWS_USERNAME}}
       - name: Print PWD
-        run: echo pwd
+        run: echo ${{pwd}}
         
         
     
